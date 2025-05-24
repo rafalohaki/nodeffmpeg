@@ -1,0 +1,6 @@
+services:
+  nodeffpeg:
+    build:
+      context: . # Build context is the current directory
+      dockerfile: Dockerfiles/Dockerfile # Name of the dockerfile
+    image: nodeffpeg # Sets the image name after build
