@@ -1,4 +1,6 @@
-FROM bitnami/node:alpine
+FROM bitnami/node
 
 # Install necessary font packages
-RUN apt install fontconfig ttf-dejavu eudev eudev-dev eudev-libs ffmpeg
+RUN apt-get update && \
+    apt-get install -y ffmpeg && \
+    rm -rf /var/lib/apt/lists/*
