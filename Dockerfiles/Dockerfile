@@ -1,7 +1,7 @@
 FROM bitnami/node:latest
 
 USER root
-RUN install_packages ffmpeg fontconfig ttf-dejavu libeudev1
+RUN install_packages ffmpeg
 USER 1001
 
 WORKDIR /app
