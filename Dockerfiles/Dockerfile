@@ -1,6 +1,8 @@
-FROM bitnami/node
+FROM bitnami/node:latest
 
-# Install necessary font packages
-RUN apt-get update && \
-    apt-get install -y ffmpeg && \
-    rm -rf /var/lib/apt/lists/*
+USER root
+RUN install_packages ffmpeg fontconfig ttf-dejavu libeudev1
+USER 1001
+
+WORKDIR /app
+COPY . .
